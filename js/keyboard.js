@@ -14,6 +14,7 @@ window.onload = function () {
     const keys = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"];
 
     let count = 0;
+    let mistakes = 0;
 
     function getRandomNumber(min, max) {
       min = Math.ceil(min);
@@ -35,7 +36,6 @@ window.onload = function () {
       const keyElement = document.getElementById(keyPressed);
       const highlightedKey = document.querySelector(".selected");
       const score = document.querySelector("#score");
-      let mistakes = 0;
 
       keyElement.classList.add("hit");
       keyElement.addEventListener('animationend', () => {
@@ -86,7 +86,7 @@ window.onload = function () {
         } else {
           document.querySelector('.title').innerHTML += '<div>Wow! You are professional. &#128181 &#128181  &#128181</div>';
         }
-        `<div>You made ${mistakes} mistakes</div>`
+        document.querySelector('.title').innerHTML += `<div>You made ${mistakes} mistakes</div>`
         document.querySelector('.title').innerHTML += '<button class="reload key" onClick="history.go(0);">Restart</button>';
         document.querySelector('.title').classList.add('finished');
       };
