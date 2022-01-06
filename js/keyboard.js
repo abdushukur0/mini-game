@@ -46,7 +46,8 @@ window.onload = function () {
         targetRandomKey();
         count++;
       } else {
-        if (count >= 0) count--;
+        let mistakes = 0;
+        mistakes++;
       }
       score.innerHTML = count;
     });
@@ -85,6 +86,7 @@ window.onload = function () {
         } else {
           document.querySelector('.title').innerHTML += '<div>Wow! You are professional. &#128181 &#128181  &#128181</div>';
         }
+        `<div>You made ${mistakes} mistakes</div>`
         document.querySelector('.title').innerHTML += '<button class="reload key" onClick="history.go(0);">Restart</button>';
         document.querySelector('.title').classList.add('finished');
       };
