@@ -35,6 +35,7 @@ window.onload = function () {
       const keyElement = document.getElementById(keyPressed);
       const highlightedKey = document.querySelector(".selected");
       const score = document.querySelector("#score");
+      let mistakes = 0;
 
       keyElement.classList.add("hit");
       keyElement.addEventListener('animationend', () => {
@@ -46,7 +47,6 @@ window.onload = function () {
         targetRandomKey();
         count++;
       } else {
-        let mistakes = 0;
         mistakes++;
       }
       score.innerHTML = count;
