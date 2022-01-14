@@ -66,6 +66,7 @@ option{
 
 #starter.active{
   opacity: 0;
+  visibility: hidden;
 }
 
 #starter.active::before,#starter.active::after{
